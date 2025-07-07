@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Homepage = () => {
   const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hoveredButton, setHoveredButton] = useState(false);
 
   useEffect(() => {
     // Trigger animations after component mounts
@@ -41,9 +40,9 @@ const Homepage = () => {
         </div>
       </div>
 
-  
+      {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
-      
+        {/* Hero Section */}
         <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent mb-4 sm:mb-6 animate-pulse">
             Tic Tac Toe
@@ -53,14 +52,14 @@ const Homepage = () => {
           </p>
         </div>
 
-        
+        {/* Game Preview Board */}
         <div className={`mb-8 sm:mb-12 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-8 border border-white/20 shadow-2xl">
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 sm:p-8 border-2 border-white/30 shadow-2xl">
             <div className="grid grid-cols-3 gap-2 sm:gap-3 w-36 h-36 sm:w-48 sm:h-48 mx-auto"> 
               {Array(9).fill(null).map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white/20 rounded-lg flex items-center justify-center text-xl sm:text-3xl font-bold text-white hover:bg-white/30 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                  className="bg-white/30 rounded-lg flex items-center justify-center text-xl sm:text-3xl font-bold text-white hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105 border border-white/20"
                 >
                   {index % 3 === 0 ? '❌' : index % 3 === 1 ? '⭕' : '❌'}
                 </div>
@@ -73,14 +72,13 @@ const Homepage = () => {
         <div className={`space-y-6 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <button
             onClick={handleStartGame}
-            onMouseEnter={() => setHoveredButton(true)}
-            onMouseLeave={() => setHoveredButton(false)}
             className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg sm:text-xl font-bold rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-green-500/50 active:scale-95"
           >
             <span className="relative z-10">🎮 Start Game</span>
             <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
+          {/* Feature Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 max-w-4xl">
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
               <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">⚡</div>

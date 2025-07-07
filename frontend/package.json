@@ -1,13 +1,16 @@
 {
-  "name": "frontend",
+  "name": "tic-tac-toe-pwa",
+  "short_name": "TicTacToe",
+  "description": "A beautiful, animated Tic-Tac-Toe game with offline support",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:pwa": "tsc -b && vite build && npm run generate-manifest"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
