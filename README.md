@@ -62,7 +62,7 @@ A beautiful, animated Tic-Tac-Toe game built with React, TypeScript, and Tailwin
 
 If you have any questions or need help:
 
-- 🐛 **Report Bugs**: [Create an issue](https://github.com/abdelishha/tictactoe/issues)
+- 🐛 **Report Bugs**: [Create an issue](https://github.com/abdelishha/Tic-Tac-Toe/issues)
 - 📧 **Contact**: abdelishha@gmail.com
 
 
